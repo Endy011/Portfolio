@@ -4,6 +4,8 @@ import Animatedletters from '../AnimatedLetters'
 import { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { MapContainer, TileLayer,Marker, Popup} from 'react-leaflet'
+import Swal from 'sweetalert2'
+
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const refForm = useRef()
@@ -25,11 +27,20 @@ const Contact = () => {
       )
       .then(
         () => {
-          alert('Message successfully sent!')
+          Swal.fire({
+            title: "Done",
+            text: "You sent your email successfully",
+            icon: "success"
+          });
           window.location.reload(false)
         },
         () => {
-          alert('Failed to send the message,please try again')
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="google.com">Why do I have this issue?</a>'
+          });
         },
       )
   }
@@ -46,7 +57,7 @@ const Contact = () => {
             />
           </h1>
           <p>
-            'm a very ambitious front-end developer looking for a role in an
+            I'm a very ambitious front-end developer looking for a role in an
             established IT company with the opportunity to work with the latest
             technologies on challenging and diverse projects.
           </p>
@@ -99,9 +110,9 @@ const Contact = () => {
             Babak street,Sumgait
         </div>
         <div className='map-wrap'>
-        <MapContainer center={[40.56735813942616, 49.695225003687014]} zoom={13}>
+        <MapContainer center={[process.env.REACT_APP_X_CORD, process.env.REACT_APP_Y_CORD]} zoom={13}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[40.56735813942616, 49.695225003687014]}>
+            <Marker position={[process.env.REACT_APP_X_CORD, process.env.REACT_APP_Y_CORD]}>
               <Popup>Tofiq is living here,come here for a cup of coffee</Popup>
             </Marker>
           </MapContainer>

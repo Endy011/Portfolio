@@ -39,8 +39,10 @@ const Home = ()=>{
            <h2>Frontend developer / Backend developer(Node JS)</h2>
            <Link to="/contact" className="flat-button">CONTACT ME</Link>
         </div>
-        <Logo/>     
+        <Logo/>   
+         
         </div>
+       
         <Loader type="pacman" />
       </>
     )
