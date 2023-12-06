@@ -6,6 +6,7 @@ import { faEnvelope, faFile, faHome, faUser } from "@fortawesome/free-solid-svg-
 import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 
+
 const Sidebar = ()=>(
      <div className = "nav-bar"> 
         <Link className='logo' to='/'>
@@ -18,7 +19,7 @@ const Sidebar = ()=>(
             </NavLink>
             <NavLink exact="true" activeclassname="active" className="about-link" to="about">
                 <FontAwesomeIcon  icon={faUser} color="#4d4d4e"  />
-            </NavLink>
+            </NavLink> 
             <NavLink exact="true" activeclassname="active" className="project-link" to="project">
                 <FontAwesomeIcon  icon={faFile}  color="#4d4d4e"  />
             </NavLink>

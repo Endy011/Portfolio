@@ -1,6 +1,6 @@
 .nav-bar{
     background-color: #181818;
-    width: 60px;
+    width: 4%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -13,7 +13,7 @@
     img{
         display: block;
         margin: 8px auto;
-        width: 24px;
+        width:  65%;
         height: auto;
     }
 
@@ -26,7 +26,7 @@
         margin-top: -120px;
         width: 100%;
         a{
-            font-size: 22px;
+            font-size: 2vw;
             color: #4d4d4e;
             display: block;
             line-height: 51px;
@@ -57,26 +57,31 @@
                 text-align: center;
                 opacity: 0;
                 transition: all 0.3s ease-out;
+                
             }
             &:first-child{
                 &:after{
                     content:"HOME";
+                    font-size: 1.1vw;
                 }
             }
         }
         a.about-link{
             &:after{
                 content: "ABOUT";
+                font-size: 0.9vw;
             }
         }
         a.contact-link{
             &:after{
                 content: "CONTACT";
+                font-size: 0.7vw;
             }
         }
         a.project-link{
             &:after{
                 content: "PROJECTS";
+                font-size: 0.65vw;
             }
         }
         a.active{
@@ -108,3 +113,84 @@
     }
 
 }
+
+
+@media screen and (max-width: 768px) {
+    .nav-bar{     
+        width: 8%;   
+        nav{
+            a{
+                font-size: 3vw;
+                &:first-child{
+                    &:after{
+                        content:"HOME";
+                        font-size: 1.2vw;
+                    }
+                }
+            }
+            a.about-link{
+                &:after{
+                    content: "ABOUT";
+                    font-size: 1.2vw;
+                }
+            }
+            a.contact-link{
+                &:after{
+                    content: "CONTACT";
+                    font-size: 1.2vw;
+                }
+            }
+            a.project-link{
+                &:after{
+                    content: "PROJECTS";
+                    font-size: 1.2vw;
+                }
+            }
+           
+        }
+    }
+    
+    }
+
+
+    
+@media screen and (max-width: 375px) {
+    .nav-bar{     
+        width: 11%;   
+        nav{
+            a{
+                font-size: 5vw;
+                &:first-child{
+                    &:after{
+                        content:"HOME";
+                        font-size: 2.5vw;
+                    }
+                }
+                
+            }      
+            a.about-link{
+                &:after{
+                    content: "ABOUT";
+                    font-size: 2.1vw;
+                }
+            }
+            a.contact-link{
+                &:after{
+                    content: "CONTACT";
+                    font-size: 1.5vw;
+                }
+            }
+            a.project-link{
+                &:after{
+                    content: "PROJECTS";
+                    font-size: 1.5vw;
+                }
+            }  
+        }
+    }
+    
+    }
+
+    .nav-bar nav a {
+        
+    }
